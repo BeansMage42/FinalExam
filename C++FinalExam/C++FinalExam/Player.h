@@ -14,6 +14,15 @@
 
 
 
+
+
+//Due to the limited scope of our final project, the only logical choice to create this system was to make the players and bots. The players and bots already had pseudo code in them
+//in our last submission. I did not use any of this pseudocode as a reference, nor did I copy any of it. Everything here is my original thoughts unless citing an outside article
+// Function and variables may have the same names, but this is due to my team and I designing the outline of each class collectively on the first project submission
+// because I like to have consistent formatting across projects
+ 
+
+
 #ifndef PLAYER_H
 #define PLAYER_H
 
@@ -63,13 +72,10 @@ namespace Game
 	class Bot final : public PlayerBase 
 	{
 	public:
-		int personality;// 1 = greedy, 2 = conservative, 3 = wildcard
+		int personality;
 		int botNum;
 		Bot(int personalityType, int card1, int card2);
 		int PlayerTurn(int highestBid) override final;
-		/*float EvaluateHandScore();
-		int GetCardRank(int num);
-		int GetCardSuit(int num);*/
 		~Bot();
 	};
 }

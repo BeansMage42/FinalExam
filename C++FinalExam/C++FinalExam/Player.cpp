@@ -16,56 +16,61 @@ namespace Game
 {
 	int PlayerBase::activePlayers = 0;
 	
-	PlayerBase::PlayerBase(string card1, string card2)
+	PlayerBase::PlayerBase(int card1, int card2, int* commCard)
 	{
 		hand[0] = card1; 
 		hand[1] = card2;
+		commCards = commCard;
 		checked = false;
 		hasFolded = false;
-		chipBetThisRound = 0;
+		chipBetThisRound = 5;
 		currentChipPool = 100;
-		highestBidThisRound = 0;
+		highestBidThisRound = 5;
 		activePlayers++;
-		cout << "Player " << activePlayers <<  " Initialized";
+
+		cout << "Player " << activePlayers <<  " Initialized \n";
 	}
 
-	string* PlayerBase:: GetHand()
+	int* PlayerBase:: GetHand()
 	{
 		return hand;
 	}
 
 	int PlayerBase::Check() 
 	{
+		cout << name << " Checked! \n";
 		checked = true;
 		return 0;
 	}
 
 	int PlayerBase::Raise(int raiseAmount)
 	{
+		
 		if ((highestBidThisRound + raiseAmount) > currentChipPool) 
 		{
-			cout << "you dont have enough chips to raise that much, try a different action!";
+			cout << "you dont have enough chips to raise that much, try a different action! \n";
 			return PlayerTurn(highestBidThisRound);
 		}
 		else
 		{
-			chipBetThisRound = highestBidThisRound + raiseAmount;
+			cout << name << " Raised by " << raiseAmount << "\n";
+			chipBetThisRound += raiseAmount;
 			return chipBetThisRound;
 		}
 	}
 
 	int PlayerBase::Call() 
 	{
+		cout << name << " called! \n";
 		//checks if the player has enough chips left to call
 		if (highestBidThisRound > currentChipPool) 
 		{
-			cout << "you dont have enough chips to call, try a different action!";
+			cout << "\n you dont have enough chips to call, try a different action! \n";
 			 return PlayerTurn(highestBidThisRound);
 		}
 		else 
 		{
 			chipBetThisRound = highestBidThisRound;
-
 
 			return chipBetThisRound;
 		}
@@ -73,6 +78,7 @@ namespace Game
 
 	int PlayerBase::Fold()
 	{
+		cout << name << " has folded! \n";
 		hasFolded = true;
 		return -1;
 	}
@@ -87,18 +93,19 @@ namespace Game
 		currentChipPool -= chipBetThisRound;
 		//do something to indicate the player is out this round
 	}
+	
 	PlayerBase::~PlayerBase() 
 	{
 		activePlayers--;
-		cout << "Player destroyed";
+		cout << "Player destroyed \n";
 	}
 	
 	int User::PlayerTurn(int highestBid)
 	{
 		if (hasFolded) return -1;
 		highestBidThisRound = highestBid;
-		cout << "Your turn! You currently have: " << (currentChipPool - chipBetThisRound) << " chips left and have bid " << currentChipPool << " chips this round.";
-		cout << "Chose your action: \n 1: Check \n 2: Call \n 3: Raise \n 4: fold";
+		cout << "\n Your turn! You currently have: " << (currentChipPool - chipBetThisRound) << " chips left and have bid " << chipBetThisRound << " chips this round. \n";
+		cout << "\n Chose your action: \n 1: Check \n 2: Call \n 3: Raise \n 4: fold \n";
 		int action;
 		int amountOfChipsToAddToPot;
 		cin >> action;
@@ -106,23 +113,23 @@ namespace Game
 		switch (action)
 		{
 		default:
-			cout << "You Checked.";
+			
 			amountOfChipsToAddToPot = Check();
 			break;
 		case 2:
-			cout << "You Called!";
+			
 			amountOfChipsToAddToPot = Call();
 			break;
 
 		case 3:
-			cout << "You would like to raise. How many chips above " << highestBid << " would you like to bid?";
+			cout << "You would like to raise. How many chips above " << highestBid << " would you like to bid? \n";
 			int amountBid;
 			cin >> amountBid;
 			amountOfChipsToAddToPot = Raise(amountBid);
 			break;
 
 		case 4:
-			cout << "you have folded, your turn will be skipped until end of round";
+			
 			amountOfChipsToAddToPot = Fold();
 			break;
 		}
@@ -130,25 +137,47 @@ namespace Game
 		
 	}
 
-	User::User(string card1, string card2) : PlayerBase(card1,card2)
+	User::User(int card1, int card2, int* comm) : PlayerBase(card1,card2,comm)
 	{
-		cout << "User Initialized";
+		name = "Player 1";
+		cout << "User Initialized \n";
 	}
-
-	Bot::Bot(int personalityType, string card1, string card2) : PlayerBase(card1, card2) 
+	User::~User() 
 	{
+		cout << "Player 1 destroyed\n";
+	}
+	Bot::Bot(int personalityType, int card1, int card2, int* comm) : PlayerBase(card1, card2, comm) 
+	{
+		botNum = activePlayers;
+		currentChipPool = 120;
+		name = "bot " + std::to_string( botNum -1);
 		personality = personalityType;
 	}
 
-	int Bot::PlayerTurn(int highestBid) 
+	int Bot::PlayerTurn(int highestBid)
 	{
+		//cout << "\n Bot " << botNum << " turn \n ";
+		highestBidThisRound = highestBid;
+		int betAmount;
 		switch (personality)
 		{
 		default:
-
+			
+			betAmount = Call();
+			break;
+		case 1:
+			betAmount = Check();
+			break;
+		case 2:
+			betAmount = Raise((highestBid +10) - chipBetThisRound);
 			break;
 		}
 
+		return betAmount;
 	}
 
+	Bot::~Bot() 
+	{
+		cout << name << " destroyed\n";
+	}
 }

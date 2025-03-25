@@ -13,6 +13,7 @@
 
 
 
+
 #ifndef PLAYER_H
 #define PLAYER_H
 
@@ -20,6 +21,7 @@
 
 using namespace std;
 #include <string>
+#include <algorithm>
 #include <iostream>
 
 
@@ -34,41 +36,42 @@ namespace Game
 		int highestBidThisRound;
 		bool checked;
 		bool hasFolded;
-		string hand[2];
-		PlayerBase(string card1, string card2);
+		int hand[2];
+		int* commCards;
+		string name;
+		PlayerBase(int card1, int card2, int* commCard);
 		virtual int PlayerTurn(int highestBid) = 0;
-		string* GetHand();
+		int* GetHand();
 		int Check();
 		int Raise(int raiseAmount);
 		int Call();
 		int Fold();
 		void WonAmount(int amount);
 		void lostAmount();
-		~PlayerBase();
+		
+		virtual ~PlayerBase();
 
 	};
 
 	class User : public PlayerBase 
 	{
 	public:
-		User(string card1, string card2);
+		User(int card1, int card2,int* commCard);
 		int PlayerTurn(int highestBid) override;
-		//~User();
+		~User();
 	};
 
 	class Bot final : public PlayerBase 
 	{
 	public:
 		int personality;// 1 = greedy, 2 = conservative, 3 = wildcard
-		
-		Bot(int personalityType, string card1, string card2);
+		int botNum;
+		Bot(int personalityType, int card1, int card2, int* commCard);
 		int PlayerTurn(int highestBid) override final;
-		//~Bot();
+		/*float EvaluateHandScore();
+		int GetCardRank(int num);
+		int GetCardSuit(int num);*/
+		~Bot();
 	};
-
-	
-	
-
-	
 }
 #endif //PLAYER_H

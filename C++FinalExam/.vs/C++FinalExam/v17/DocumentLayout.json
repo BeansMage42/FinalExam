@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\kitte\\Desktop\\school work\\CC\u002B\u002B\\FinalExam\\C\u002B\u002BFinalExam\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2562431E-EB6F-4C68-830D-47A62A700FF0}|C\u002B\u002BFinalExam\\C\u002B\u002BFinalExam.vcxproj|C:\\Users\\kitte\\Desktop\\school work\\CC\u002B\u002B\\FinalExam\\C\u002B\u002BFinalExam\\C\u002B\u002BFinalExam\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2562431E-EB6F-4C68-830D-47A62A700FF0}|C\u002B\u002BFinalExam\\C\u002B\u002BFinalExam.vcxproj|solutionrelative:C\u002B\u002BFinalExam\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2562431E-EB6F-4C68-830D-47A62A700FF0}|C\u002B\u002BFinalExam\\C\u002B\u002BFinalExam.vcxproj|C:\\Users\\kitte\\Desktop\\school work\\CC\u002B\u002B\\FinalExam\\C\u002B\u002BFinalExam\\C\u002B\u002BFinalExam\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2562431E-EB6F-4C68-830D-47A62A700FF0}|C\u002B\u002BFinalExam\\C\u002B\u002BFinalExam.vcxproj|solutionrelative:C\u002B\u002BFinalExam\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2562431E-EB6F-4C68-830D-47A62A700FF0}|C\u002B\u002BFinalExam\\C\u002B\u002BFinalExam.vcxproj|C:\\Users\\kitte\\Desktop\\school work\\CC\u002B\u002B\\FinalExam\\C\u002B\u002BFinalExam\\C\u002B\u002BFinalExam\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2562431E-EB6F-4C68-830D-47A62A700FF0}|C\u002B\u002BFinalExam\\C\u002B\u002BFinalExam.vcxproj|solutionrelative:C\u002B\u002BFinalExam\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2562431E-EB6F-4C68-830D-47A62A700FF0}|C\u002B\u002BFinalExam\\C\u002B\u002BFinalExam.vcxproj|C:\\Users\\kitte\\Desktop\\school work\\CC\u002B\u002B\\FinalExam\\C\u002B\u002BFinalExam\\C\u002B\u002BFinalExam\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2562431E-EB6F-4C68-830D-47A62A700FF0}|C\u002B\u002BFinalExam\\C\u002B\u002BFinalExam.vcxproj|solutionrelative:C\u002B\u002BFinalExam\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,43 +22,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Player.cpp",
               "DocumentMoniker": "C:\\Users\\kitte\\Desktop\\school work\\CC\u002B\u002B\\FinalExam\\C\u002B\u002BFinalExam\\C\u002B\u002BFinalExam\\Player.cpp",
               "RelativeDocumentMoniker": "C\u002B\u002BFinalExam\\Player.cpp",
               "ToolTip": "C:\\Users\\kitte\\Desktop\\school work\\CC\u002B\u002B\\FinalExam\\C\u002B\u002BFinalExam\\C\u002B\u002BFinalExam\\Player.cpp",
               "RelativeToolTip": "C\u002B\u002BFinalExam\\Player.cpp",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAAAHYAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-24T18:41:00.935Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Player.h",
               "DocumentMoniker": "C:\\Users\\kitte\\Desktop\\school work\\CC\u002B\u002B\\FinalExam\\C\u002B\u002BFinalExam\\C\u002B\u002BFinalExam\\Player.h",
               "RelativeDocumentMoniker": "C\u002B\u002BFinalExam\\Player.h",
               "ToolTip": "C:\\Users\\kitte\\Desktop\\school work\\CC\u002B\u002B\\FinalExam\\C\u002B\u002BFinalExam\\C\u002B\u002BFinalExam\\Player.h",
               "RelativeToolTip": "C\u002B\u002BFinalExam\\Player.h",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAD8AAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAuwDMAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-03-24T17:35:34.419Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\kitte\\Desktop\\school work\\CC\u002B\u002B\\FinalExam\\C\u002B\u002BFinalExam\\C\u002B\u002BFinalExam\\main.cpp",
               "RelativeDocumentMoniker": "C\u002B\u002BFinalExam\\main.cpp",
               "ToolTip": "C:\\Users\\kitte\\Desktop\\school work\\CC\u002B\u002B\\FinalExam\\C\u002B\u002BFinalExam\\C\u002B\u002BFinalExam\\main.cpp",
               "RelativeToolTip": "C\u002B\u002BFinalExam\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-24T17:24:53.777Z",
               "EditorCaption": ""

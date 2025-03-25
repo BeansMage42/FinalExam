@@ -37,9 +37,8 @@ namespace Game
 		bool checked;
 		bool hasFolded;
 		int hand[2];
-		int* commCards;
 		string name;
-		PlayerBase(int card1, int card2, int* commCard);
+		PlayerBase(int card1, int card2);
 		virtual int PlayerTurn(int highestBid) = 0;
 		int* GetHand();
 		int Check();
@@ -56,7 +55,7 @@ namespace Game
 	class User : public PlayerBase 
 	{
 	public:
-		User(int card1, int card2,int* commCard);
+		User(int card1, int card2);
 		int PlayerTurn(int highestBid) override;
 		~User();
 	};
@@ -66,7 +65,7 @@ namespace Game
 	public:
 		int personality;// 1 = greedy, 2 = conservative, 3 = wildcard
 		int botNum;
-		Bot(int personalityType, int card1, int card2, int* commCard);
+		Bot(int personalityType, int card1, int card2);
 		int PlayerTurn(int highestBid) override final;
 		/*float EvaluateHandScore();
 		int GetCardRank(int num);

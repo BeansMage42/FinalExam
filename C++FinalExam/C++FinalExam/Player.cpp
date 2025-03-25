@@ -16,11 +16,10 @@ namespace Game
 {
 	int PlayerBase::activePlayers = 0;
 	
-	PlayerBase::PlayerBase(int card1, int card2, int* commCard)
+	PlayerBase::PlayerBase(int card1, int card2)
 	{
 		hand[0] = card1; 
 		hand[1] = card2;
-		commCards = commCard;
 		checked = false;
 		hasFolded = false;
 		chipBetThisRound = 5;
@@ -53,8 +52,9 @@ namespace Game
 		}
 		else
 		{
-			cout << name << " Raised by " << raiseAmount << "\n";
+			
 			chipBetThisRound += raiseAmount;
+			cout << name << " Raised by " << raiseAmount << " to " << raiseAmount << endl;
 			return chipBetThisRound;
 		}
 	}
@@ -80,7 +80,7 @@ namespace Game
 	{
 		cout << name << " has folded! \n";
 		hasFolded = true;
-		return -1;
+		return 0;
 	}
 
 	void PlayerBase::WonAmount(int amount) 
@@ -137,7 +137,7 @@ namespace Game
 		
 	}
 
-	User::User(int card1, int card2, int* comm) : PlayerBase(card1,card2,comm)
+	User::User(int card1, int card2) : PlayerBase(card1,card2)
 	{
 		name = "Player 1";
 		cout << "User Initialized \n";
@@ -146,7 +146,7 @@ namespace Game
 	{
 		cout << "Player 1 destroyed\n";
 	}
-	Bot::Bot(int personalityType, int card1, int card2, int* comm) : PlayerBase(card1, card2, comm) 
+	Bot::Bot(int personalityType, int card1, int card2) : PlayerBase(card1, card2) 
 	{
 		botNum = activePlayers;
 		currentChipPool = 120;

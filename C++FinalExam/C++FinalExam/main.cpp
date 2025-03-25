@@ -11,6 +11,12 @@
 //of zero or disciplinary action.By typing my name above, I commit to academic integrity and accept full responsibility
 //for my work
 
+
+
+
+//This system is meant to simulate a single turn cycle of my poker game using the inheritence structure to create user and bot classes
+
+
 using namespace std;
 
 #include "Player.h"
@@ -21,7 +27,6 @@ using namespace std;
 // rank is a number between 0 and 11 (add 2 for the actual number on card because cards start at 2 and end at 13 for aces)
 // card = suit * 13 + rank
  string EvaluateCard(int cardnum);
- int myrandom(int);
 int main() {
 	using namespace Game;
 	
@@ -51,10 +56,10 @@ int main() {
 	//this reddit comment helped me figure out how to make an array using unique pointers https://www.reddit.com/r/learnprogramming/comments/lp15tn/comment/go8rtdg/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 	std::unique_ptr< PlayerBase> players[4];
 
-	players[0] = std::make_unique<User>(deck[5], deck[6], commCards);
-	players[1] = std::make_unique<Bot>(1, deck[7], deck[8], commCards);
-	players[2] = std::make_unique<Bot>(2, deck[9], deck[10], commCards);
-	players[3] = std::make_unique<Bot>(3, deck[11], deck[12], commCards);
+	players[0] = std::make_unique<User>(deck[5], deck[6]);
+	players[1] = std::make_unique<Bot>(1, deck[7], deck[8]);
+	players[2] = std::make_unique<Bot>(2, deck[9], deck[10]);
+	players[3] = std::make_unique<Bot>(3, deck[11], deck[12]);
 	
 	int* ptr;
 	for (activePlayer; activePlayer < 4; activePlayer++) 

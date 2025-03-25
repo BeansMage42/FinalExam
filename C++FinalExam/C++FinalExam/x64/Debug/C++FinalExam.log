@@ -1,3 +1,5 @@
-﻿  main.cpp
-C:\Users\kitte\Desktop\school work\CC++\FinalExam\C++FinalExam\C++FinalExam\main.cpp(97,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+﻿  Player.cpp
+  main.cpp
+C:\Users\kitte\Desktop\school work\CC++\FinalExam\C++FinalExam\C++FinalExam\main.cpp(102,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
   C++FinalExam.vcxproj -> C:\Users\kitte\Desktop\school work\CC++\FinalExam\C++FinalExam\x64\Debug\C++FinalExam.exe
